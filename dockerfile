@@ -1,4 +1,4 @@
-FROM bitnami/moodle
+FROM bitnami/moodle:4.3.2
 ARG PHP_INI_DIR='/opt/bitnami/php/etc'
 ADD ./docker-php-ext-enable /usr/local/bin/
 RUN apt update && apt install -y autoconf make gcc; \
