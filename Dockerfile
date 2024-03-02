@@ -13,3 +13,5 @@ RUN printf "\n" | pecl install --configureoptions 'enable-redis-igbinary="yes"' 
 RUN docker-php-ext-enable redis
 # Clean up unnessasary stuff
 RUN apt remove -y autoconf make gcc && apt-get -y autoremove && apt-get -y autoclean && rm -f /usr/local/bin/docker-php-ext-enable
+# setup cronjob and output log to standard out to beable to view then in docker or k8s
+RUN echo "* * * * * 1001 /opt/bitnami/php/bin/php '/bitnami/moodle/admin/cli/cron.php' >/dev/stdout" >> /etc/crontab
