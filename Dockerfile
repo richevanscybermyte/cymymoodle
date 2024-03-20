@@ -1,4 +1,4 @@
-FROM bitnami/moodle:4.3.3
+FROM bitnami/moodle:4.3.3-debian-12-r5
 ARG PHP_INI_DIR='/opt/bitnami/php/etc'
 ADD ./docker-php-ext-enable /usr/local/bin/
 RUN chmod -R 777 /usr/local/bin/docker-php-ext-enable; \
